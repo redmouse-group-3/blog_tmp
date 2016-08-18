@@ -1,0 +1,6 @@
+Comment count: {{ article.get_coments|length }}
+    {% for coment in article.get_coments %}
+        <p>{{ coment.body }}</p>
+    {% empty %}
+        <p>Not coments</p>
+    {% endfor %}

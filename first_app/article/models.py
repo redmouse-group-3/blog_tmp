@@ -10,6 +10,9 @@ class Article(models.Model):
     def __str__(self):
         return self.title
 
+    def get_coments(self):
+        return Comments.objects.filter(article=self)
+
 class Comments(models.Model):
     article = models.ForeignKey(Article, default=1)
     body = models.TextField()

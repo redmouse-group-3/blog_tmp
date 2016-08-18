@@ -19,6 +19,6 @@ from article.views import index, get_article
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', index),
-    url(r'^page/([0-9]+)/$', get_article)
+    url(r'^$', index, name='index'),
+    url(r'^page/([0-9]+)/$', get_article, name='page')
 ]
