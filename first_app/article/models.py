@@ -14,6 +14,7 @@ class Article(models.Model):
         return Comments.objects.filter(article=self)
 
 class Comments(models.Model):
+    email = models.EmailField()
     article = models.ForeignKey(Article, default=1)
     body = models.TextField()
 
