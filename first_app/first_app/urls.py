@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
+from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from article.views import index, get_article
 
@@ -22,3 +23,6 @@ urlpatterns = [
     url(r'^$', index, name='index'),
     url(r'^page/([0-9]+)/$', get_article, name='page')
 ]
+urlpatterns += i18n_patterns(
+    url(r'^page/([0-9]+)/$', get_article, name='page_translate')
+)

@@ -1,3 +1,5 @@
+from django.utils.translation import ugettext as _
+
 from article.forms import CommentForm
 from article.models import Article, Comments
 from django.shortcuts import render, get_object_or_404
@@ -33,5 +35,6 @@ def get_article(request, id):
             comment.article = article
             form.save()
     form = CommentForm()
+    text = _('Hello')
 
     return render(request, 'article/inner_page.html', locals())
